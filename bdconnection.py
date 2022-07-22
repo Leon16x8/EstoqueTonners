@@ -3,7 +3,7 @@ from mysql.connector import errorcode #trata as "exceções" (erros)
 
 def conectar():
     try:
-        db_connection = mysql.connector.connect(host='localhost',user='root',password='',database='BDEstoque', consume_results = True)
+        db_connection = mysql.connector.connect(host='192.168.15.107',user='NicolasTI',password='Novaadm@2463',database='BDEstoque', consume_results = True)
         print('Conectado com sucesso')
 
         return db_connection

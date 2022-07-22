@@ -36,3 +36,5 @@ def operar():
             print('Digite sua Senha: ')
             this.senhaa = input()
             operacao.login(this.loginn, this.senhaa)
+
+

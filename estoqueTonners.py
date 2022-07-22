@@ -1,7 +1,10 @@
 import bdconnection
 import operacao
 import this
+import datetime
 import os
+
+data=datetime.datetime.now()
 
 class bcolors:
     WHITE = '\033[1;97m' #Branco
