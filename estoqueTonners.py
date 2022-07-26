@@ -20,8 +20,8 @@ def menuADM():
           '|--------------------------------ESTOQUE--------------------------------|\n' +
           '|-----------------------------------------------------------------------|\n')
     print(operacao.consultarestoque())
-    print('\n1. Atualizar Estoque')
-    print('0. Sair\n')
+    print('\n[1]. Atualizar Estoque')
+    print('[0]. Sair\n')
 
     this.opcao = int(input('Qual opção deseja senhor: '))
     print('\n')
