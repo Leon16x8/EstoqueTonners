@@ -1,6 +1,9 @@
 import operacao
 import this
 import os
+import datetime
+
+data=datetime.datetime.now()
 
 this.loginn = ""
 this.senhaa = ""
@@ -19,7 +22,7 @@ def menu():
     print('|          ESCOLA SANTA LUZIA          |\n' +
           '|--------------------------------------|\n\n'
           'Escolha uma das opções abaixo: \n\n' +
-          '1. Login\n'                                         +
+          '1. Login\n'                          +
           '0. Sair\n')
     this.opcao = int(input('Escolha uma opção: '))
 

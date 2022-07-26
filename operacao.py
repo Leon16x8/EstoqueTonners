@@ -2,9 +2,8 @@ import mysql.connector
 import bdconnection
 import estoqueTonners
 import os
-import datetime
-
-data=datetime.datetime.now()
+from datetime import date, time, datetime, timedelta
+import getpass
 
 db_connection = bdconnection.conectar()
 con = db_connection.cursor()
@@ -44,13 +43,14 @@ def login(loginn, senhaa):
 
 def consultarestoque():
     try:
-        sql = 'select codigo, impressora, estoque, preço from EstoqueBro'
+        sql = 'select codigo, impressora, estoque, preço, modifica from EstoqueBro'
         con.execute(sql)
-        for(codigo, impressora, estoque, preço) in con:
+        for(codigo, impressora, estoque, preço, modifica) in con:
             print("-----------------------------------------------")
             print('Impressora {}: {}'.format(codigo, impressora))
             print('Estoque: {}'.format(estoque))
             print('Valor do Tonner: R${}'.format(preço))
+            print('Data de Modificação: {}'.format(modifica))
             if estoque == 0:
                 print("Precisamos comprar mais 2 Tonners")
                 print("-----------------------------------------------")
@@ -73,9 +73,13 @@ def adicionarEstoque(estoque):
 
 def atualizarEstoque(campo, novoDado, codigo):
     try:
+        data = datetime.today()
         sql = "update EstoqueBro set {} = '{}' where codigo = '{}'".format(campo, novoDado, codigo)
+        "update EstoqueBro set modifica = '{}'".format(data)
         con.execute(sql)
         db_connection.commit()
-        print('Estoque atualizado com sucesso !\n')
+        print("Estoque atualizado com sucesso! Data de Modificação:", data)
+
+
     except Exception as erro:
         print(erro)

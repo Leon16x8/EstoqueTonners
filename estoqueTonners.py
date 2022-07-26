@@ -6,6 +6,7 @@ import os
 
 data=datetime.datetime.now()
 
+
 class bcolors:
     WHITE = '\033[1;97m' #Branco
     BLACK = '\033[1;30m' #Preto
